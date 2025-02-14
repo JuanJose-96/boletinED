@@ -14,6 +14,13 @@ public class Usuario {
     protected String email;
     private List<Asignatura> asignaturas;
 
+    /**
+     * Constructor de la clase Usuario
+     * El constructor recibe por parámetro el nombre y el email del usuario
+     * El constructor también inicializa una lista de asignaturas vacia
+     * @param nombre Nombre del Usuario
+     * @param email Email del usuario
+     */
     public Usuario(String nombre, String email) {
         this.nombre = nombre;
         this.email = email;
