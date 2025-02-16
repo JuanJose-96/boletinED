@@ -28,9 +28,18 @@ public class Main {
         profesor1.calificarAlumno(alumno1, matematicas, 85);
         profesor1.calificarAlumno(alumno1, programacion, 90);
         profesor1.calificarAlumno(alumno2, programacion, 78);
+        programacion.agreagarAlumno(alumno1);
+        programacion.agreagarAlumno(alumno2);
 
         // Mostrar notas de los alumnos
         alumno1.mostrarNotas();
         alumno2.mostrarNotas();
+
+        // Mostrar los datos de todos los alumnos
+        System.out.println("Datos de los alumnos");
+        programacion.getDatosAlumnos();
+
     }
+
+
 }

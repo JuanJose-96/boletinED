@@ -35,4 +35,12 @@ public class Asignatura {
             if (a.getNombre().equals(alumno.nombre)) alumnos.remove(a);
         }
     }
+    public List<Alumno> getDatosAlumnos() {
+
+        for (Alumno datosAlumnos : alumnos) {
+            System.out.println("Nombre: "+datosAlumnos.getNombre()+ "\n"+
+                    "Email: " + datosAlumnos.getEmail());
+        }
+        return alumnos;
+    }
 }
