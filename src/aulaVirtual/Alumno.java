@@ -10,16 +10,33 @@ import java.util.Map;
  */
 public class Alumno extends Usuario {
 
-    private Map<Asignatura, Integer> notas;
+    private Map<Asignatura, Integer> notas; //notas con asignaturas
+
+    /**
+     *Constructor de la clase alumno con su nombre, email y sus notas de las asignaturas
+     * @param nombre nombre del alumno
+     * @param email email del alumno
+     */
 
     public Alumno(String nombre, String email) {
         super(nombre, email);
         this.notas = new HashMap<>();
     }
 
+    /**
+     *Getter de la copia de notas
+     * @return copia de las notas junto con las asignaturas
+     */
     public Map<Asignatura, Integer> getNotas() {
         return new HashMap<>(notas);
     }
+
+    /**
+     *Metodo que inscribe al alumno a una asignatura asignandole una nota, si no
+     * esta inscrito se imprime que el alumno no esta inscrito en dicha asignatura
+     * @param asignatura asignatura de la que el alumno se evalua
+     * @param nota nota de la asignatura cursada
+     */
 
     protected void asignarNota(Asignatura asignatura, int nota) {
         if (getAsignaturas().contains(asignatura)) {
@@ -29,6 +46,10 @@ public class Alumno extends Usuario {
         }
     }
 
+    /**
+     *Metodo que muestra las notas cuando el alumno ha sido inscrito en una
+     * asignatura
+     */
     public void mostrarNotas() {
         System.out.println("Notas del alumno " + nombre + ":");
         for (Map.Entry<Asignatura, Integer> entry : notas.entrySet()) {
@@ -36,6 +57,11 @@ public class Alumno extends Usuario {
         }
     }
 
+
+    /**
+     *Metodo para obtener la nota despues de cursar la asignatura
+     * @param asignatura asignatura de la que el alumno se ha evaluado
+     */
     public int obtenerNota(Asignatura asignatura) {
         return notas.getOrDefault(asignatura, -1);
     }
